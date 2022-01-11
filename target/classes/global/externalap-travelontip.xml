@@ -33,11 +33,11 @@ attributes.uriParams.transactionid]]></ee:set-variable>
 		<choice doc:name="Choice" doc:id="3599123f-85b7-4935-a37d-182b9ecf14ba" >
 			<when expression='#[vars.servicetype == "routes"]'>
 				<logger level="INFO" doc:name="Logger" doc:id="b5b93ccc-4096-4a9b-82e3-ff53c58f4a90" message="logger for routes flow"/>
-				<flow-ref doc:name="Flow Reference" doc:id="c2b0fd65-448d-453d-a67f-8e4cb303ed1d" name="travelontip-routesimpFlow"/>
+				<flow-ref doc:name="Flow Reference" doc:id="c2b0fd65-448d-453d-a67f-8e4cb303ed1d" name="travelontip-routesimpSub_Flow"/>
 			</when>
 			<when expression='#[vars.servicetype == "schedules"]'>
 				<logger level="INFO" doc:name="Logger" doc:id="d291b4ff-0db3-4518-8755-dc214f4f4ac9" message="logger for schedules flow"/>
-				<flow-ref doc:name="Flow Reference" doc:id="0f1f2df7-81ba-4378-b2a5-62d694db6bd6" name="travelontip-schedulesimpFlow"/>
+				<flow-ref doc:name="Flow Reference" doc:id="0f1f2df7-81ba-4378-b2a5-62d694db6bd6" name="travelontip-schedulesimpSub_Flow"/>
 			</when>
 			<otherwise >
 				<logger level="INFO" doc:name="Logger" doc:id="a7b0ce76-c2fc-4e99-9d91-f6002eec3902" message="logger for default flow"/>
