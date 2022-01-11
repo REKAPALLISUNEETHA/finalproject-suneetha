@@ -1,0 +1,30 @@
+{
+  "configs": [
+    "implementation/travelontip-schedulesimp.xml",
+    "global/externalap-travelontip.xml",
+    "implementation/travelontip-routesimp.xml"
+  ],
+  "secureProperties": [],
+  "redeploymentEnabled": true,
+  "name": "com.mycompany:externalap-travelontip:1.0.0-SNAPSHOT",
+  "minMuleVersion": "4.4.0",
+  "requiredProduct": "MULE_EE",
+  "classLoaderModelLoaderDescriptor": {
+    "id": "mule",
+    "attributes": {
+      "exportedPackages": [],
+      "exportedResources": [
+        "application-types.xml",
+        "global/externalap-travelontip.xml",
+        "implementation/travelontip-routesimp.xml",
+        "implementation/travelontip-schedulesimp.xml",
+        "log4j2.xml",
+        "properties/dev.yaml"
+      ]
+    }
+  },
+  "bundleDescriptorLoader": {
+    "id": "mule",
+    "attributes": {}
+  }
+}
