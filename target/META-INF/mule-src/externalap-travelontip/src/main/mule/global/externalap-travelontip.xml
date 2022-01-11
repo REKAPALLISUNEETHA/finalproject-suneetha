@@ -15,21 +15,21 @@ http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/
 				<http:body ><![CDATA[#[vars.errormsg default "Error"]]]></http:body>
 			</http:error-response>
 		</http:listener>
-		<logger level="INFO" doc:name="Logger" doc:id="87acf67c-712f-4b01-91d3-448e49256657" message="requset received from travelontip external system transactionid: #[attributes.headers.transactionid]"/>
 		<ee:transform doc:name="Transform Message" doc:id="dd4001e8-e77e-4f51-9645-140c4d4d7704" >
 			<ee:message >
 			</ee:message>
 			<ee:variables >
 				<ee:set-variable variableName="servicetype" ><![CDATA[%dw 2.0
-output application/java
+output application/json
 ---
 attributes.uriParams.servicetype]]></ee:set-variable>
 				<ee:set-variable variableName="transactionid" ><![CDATA[%dw 2.0
 output application/json
 ---
-attributes.uriParams.transactionid]]></ee:set-variable>
+attributes.headers.transactionid]]></ee:set-variable>
 			</ee:variables>
 		</ee:transform>
+		<logger level="INFO" doc:name="Logger" doc:id="87acf67c-712f-4b01-91d3-448e49256657" message="requset received from travelontip external system transactionid: #[vars.transactionid]" />
 		<choice doc:name="Choice" doc:id="3599123f-85b7-4935-a37d-182b9ecf14ba" >
 			<when expression='#[vars.servicetype == "routes"]'>
 				<logger level="INFO" doc:name="Logger" doc:id="b5b93ccc-4096-4a9b-82e3-ff53c58f4a90" message="logger for routes flow"/>
